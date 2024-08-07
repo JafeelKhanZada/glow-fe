@@ -3,7 +3,7 @@ import Questions from "../app/quetions";
 
 const router = createBrowserRouter([
   {
-    path: "/questions",
+    path: "/",
     element: <Questions />,
   },
 ]);
