@@ -8,6 +8,7 @@ export interface BaseQuestion {
   id: number;
   text: string;
   type: QuestionType;
+  rules?: QuestionRules[];
 }
 
 export interface BooleanQuestion extends BaseQuestion {
@@ -18,7 +19,7 @@ export interface BooleanQuestion extends BaseQuestion {
 
 export interface NumberQuestion extends BaseQuestion {
   type: "number";
-  next: (answer: number) => NextStep;
+  next: NextType[];
   answer?: string | number;
 }
 
@@ -34,4 +35,8 @@ export interface QuestionsState {
   activeQuestionId: NextStep;
   counter: number;
   history: number[];
+}
+export interface QuestionRules {
+  message?: string;
+  [key: string]: any;
 }

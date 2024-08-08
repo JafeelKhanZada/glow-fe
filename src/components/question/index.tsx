@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import BooleanQuestion from "../boolean-question";
 import { Question, NextType } from "../../store/questions/type";
+import NumberQuestion from "../number-question";
 interface Props {
   question: Question;
   number: number;
@@ -27,7 +28,9 @@ function QuestionComponent(props: Props): React.ReactElement<Props> {
           })}
         </div>
       ) : (
-        <></>
+        <div className="mt-5">
+          <NumberQuestion Question={props?.question} />
+        </div>
       )}
     </div>
   );

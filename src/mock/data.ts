@@ -13,10 +13,17 @@ export const questions: Question[] = [
   {
     id: 2,
     text: "How many employees do you have?",
-    type: "boolean",
+    type: "number",
     next: [
-      { name: "yes", value: 3 },
-      { name: "no", value: 6 },
+      { name: "min", value: 3 },
+      { name: "else", value: 6 },
+    ],
+    rules: [
+      {
+        name: "min",
+        value: 100,
+        operator: "lt",
+      },
     ],
   },
   //   type: "number",

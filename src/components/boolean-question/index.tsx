@@ -13,7 +13,6 @@ function BoolanQuestion(props: Props): React.ReactElement<Props> {
   // Hooks
   const dispatch = useDispatch();
   const handler = () => {
-    console.log("props?.value", props?.value);
     return dispatch(
       AUpdateQuestionId({
         Question: props?.Question,
